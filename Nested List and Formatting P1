@@ -1,0 +1,23 @@
+nL = []
+
+while True:
+    val = input("Enter an element for the nested list (or type 'done' to finish): ")
+    
+    if val.lower() == 'done':
+        break
+    
+    if '[' in val and ']' in val:
+        nL.append(eval(val))
+    elif val.isdigit():
+        val = int(val)
+        nL.append(val)
+    elif '.' in val:
+        try:
+            val = float(val)
+            nL.append(val)
+        except ValueError:
+            nL.append(val)
+    else:
+        nL.append(val)
+
+print("Nested List:", nL)
